@@ -1,6 +1,6 @@
-name: 'StackSpot AI Remote Quick Command Action'
+name: 'Execute StackSpot AI Remote Quick Command Action'
 
-description: 'StackSpot AI Remote Quick Command Action'
+description: 'Execute StackSpot AI Remote Quick Command'
 
 inputs:
   CLIENT_ID:
