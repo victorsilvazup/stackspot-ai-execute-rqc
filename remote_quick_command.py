@@ -80,7 +80,7 @@ def get_execution_status(file_path, access_token):
             if command_status == "COMPLETED":
                 result = response_data['result']
                 if result.strip().startswith("```json"):
-                    result = result[7:-4].strip()
+                    result = result[8:-4].strip()
                 result_final.append({"file": file_name, "result": result})
                 
             if command_status == "FAILED":
