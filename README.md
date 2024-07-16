@@ -14,7 +14,7 @@ steps:
       with: 
           fetch-depth: 2 # mandatory to detect changes in files
 
-    - uses: victorsilvazup/stackspot-ai-execute-rqc@main
+    - uses: victorsilvazup/stackspot-ai-execute-rqc@v1
       id: rqc
       with:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
