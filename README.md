@@ -45,4 +45,4 @@ Field | Observation
 
 ## 🏅 Licensed
 
-☞ This repository uses the [Apache License 2.0](https://https://github.com/victorsilvazup/stackspot-ai-execute-rqc/blob/main/LICENSE)
+☞ This repository uses the [Apache License 2.0](https://github.com/victorsilvazup/stackspot-ai-execute-rqc/blob/main/LICENSE)
