@@ -62,6 +62,18 @@ runs:
         QC_SLUG: ${{ inputs.QC_SLUG }}
         CHANGED_FILES: ${{ env.CHANGED_FILES }}
 
+    - name: Convert output to sarif
+      id: sout
+      run: python3 ${GITHUB_ACTION_PATH}/convert_to_sarif.py
+      shell: bash
+      env:
+        INPUT_JSON: ${{ steps.rqc.outputs.rqc_result }}
+
+    - name: Upload Sarif File
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: results.sarif
+
 branding:
     icon: 'terminal'
     color: 'gray-dark'
