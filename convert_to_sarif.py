@@ -2,8 +2,11 @@ import os
 import json
 
 def convert_to_sarif(input_json, output_file):
-    input = json.load(input_json)
-    print(f'input = {input}')
+    for item in input_json:
+        item['result'] = item['result'].replace("\\n", '')
+        
+    json_array = json.loads(json.dumps(input_json))
+    print(f'input = {json_array}')
     sarif = {
         "version": "2.1.0",
         "runs": [
@@ -20,18 +23,19 @@ def convert_to_sarif(input_json, output_file):
         ],
     }
 
-    for result in input:
+    for result in json_array:
         print(f'result = {result}')
         file = result["file"]
         item = result["result"]
+        item_json = json.loads(item)
         sarif_result = {
-            "ruleId": item["rule_id"],
-            "message": {"text": item["correction"]},
+            "ruleId": item_json["rule_id"],
+            "message": {"text": item_json["message"]},
             "locations": [
                 {
                     "physicalLocation": {
                         "artifactLocation": {"uri": file},
-                        "region": {"startLine": item["line"]},
+                        "region": {"startLine": item_json["line"]},
                     }
                 }
             ],
