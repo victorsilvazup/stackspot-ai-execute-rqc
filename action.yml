@@ -70,7 +70,7 @@ runs:
         INPUT_JSON: ${{ steps.rqc.outputs.rqc_result }}
 
     - name: Upload Sarif File
-      uses: github/codeql-action/upload-sarif@v2
+      uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: results.sarif
 
