@@ -2,6 +2,7 @@ import os
 import json
 
 def convert_to_sarif(input_json, output_file):
+    print(input_json)
     sarif = {
         "version": "2.1.0",
         "runs": [
