@@ -20,6 +20,7 @@ def convert_to_sarif(input_json, output_file):
     }
 
     for result in input_json:
+        print(f'result = {result}')
         file = result["file"]
         item = result["result"]
         sarif_result = {
