@@ -67,7 +67,7 @@ runs:
       run: python3 ${GITHUB_ACTION_PATH}/convert_to_sarif.py
       shell: bash
       env:
-        INPUT_JSON: ${{ steps.rqc.outputs.rqc_result }}
+        INPUT_JSON: ${{ steps.rqc.outputs.result }}
 
     - name: Upload Sarif File
       uses: github/codeql-action/upload-sarif@v3
