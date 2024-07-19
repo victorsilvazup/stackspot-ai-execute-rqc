@@ -5,7 +5,7 @@ def convert_to_sarif(input_json, output_file):
     # for item in input_json:
     #     item['result'] = item['result'].replace("\\n", '')
         
-    json_array = json.loads(json.dumps(input_json))
+    json_array = json.loads(input_json)
     print(f'input = {json_array}')
     sarif = {
         "version": "2.1.0",
