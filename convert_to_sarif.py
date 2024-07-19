@@ -20,14 +20,16 @@ def convert_to_sarif(input_json, output_file):
     }
 
     for result in input_json:
+        file = result["file"]
+        item = result["result"]
         sarif_result = {
-            "ruleId": result["rule_id"],
-            "message": {"text": result["correction"]},
+            "ruleId": item["rule_id"],
+            "message": {"text": item["correction"]},
             "locations": [
                 {
                     "physicalLocation": {
-                        "artifactLocation": {"uri": result["file"]},
-                        "region": {"startLine": result["line"]},
+                        "artifactLocation": {"uri": file},
+                        "region": {"startLine": item["line"]},
                     }
                 }
             ],
